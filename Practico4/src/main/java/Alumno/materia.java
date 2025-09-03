@@ -5,13 +5,13 @@ package Alumno;
  *
  * @author lucio
  */
-public class materia {
+public class Materia {
     
     public int idMateria;
     public String nombre;
     public int anio;
 
-    public materia(int idMateria, String nombre, int anio) {
+    public Materia(int idMateria, String nombre, int anio) {
         
         this.idMateria = idMateria;
         this.nombre = nombre;
