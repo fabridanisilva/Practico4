@@ -5,6 +5,7 @@
 package Alumno;
 
 import java.util.HashSet;
+import java.util.Iterator;
 
 /**
  *
@@ -14,7 +15,7 @@ public class Alumno {
     private int legajo;
     private String apellido;
     private String nombre;
-    private HashSet<Materia> materias;
+    private HashSet<Materia> materias = new HashSet<>();
     
     public Alumno(int legajo, String apellido, String nombre) {
         this.legajo = legajo;
@@ -48,9 +49,12 @@ public class Alumno {
     }
     
     public void agregarMateria(Materia m){
-        this.materias.add(m);
+        materias.add(m);
+       
     }
     public int cantidadMaterias(){
         return materias.size();
+        
+        
     }
 }
