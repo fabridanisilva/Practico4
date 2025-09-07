@@ -5,6 +5,7 @@
 package Gui;
 
 import Alumno.Alumno;
+import java.util.HashSet;
 import javax.swing.JOptionPane;
 
 /**
@@ -13,12 +14,14 @@ import javax.swing.JOptionPane;
  */
 public class FormularioAlumnos extends javax.swing.JInternalFrame {
     Alumno alumno;
+    private HashSet <Alumno> datos;
     /**
      * Creates new form FormularioAlumnos
      */
-    public FormularioAlumnos() {
+    public FormularioAlumnos(HashSet <Alumno> alumn) {
         initComponents();
         inavilitarCampos();
+        this.datos = alumn;
     }
 
     /**

@@ -4,6 +4,9 @@
  */
 package Gui;
 
+import Alumno.Alumno;
+import Alumno.Materia;
+import java.util.HashSet;
 import javax.swing.table.DefaultTableModel;
 
 /**
@@ -12,12 +15,15 @@ import javax.swing.table.DefaultTableModel;
  */
 public class FormularioInscripcion extends javax.swing.JInternalFrame {
     private DefaultTableModel modelo;
+    private HashSet <Alumno> inscripcion;
+    private HashSet <Materia> materia;
     /**
      * Creates new form FormularioAlumnos
      */
-    public FormularioInscripcion() {
+    public FormularioInscripcion(HashSet<Alumno> alumn) {
         initComponents();
         modelo = new DefaultTableModel();
+        this.inscripcion = alumn;
     }
 
     /**

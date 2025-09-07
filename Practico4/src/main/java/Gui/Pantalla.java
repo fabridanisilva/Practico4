@@ -4,11 +4,18 @@
  */
 package Gui;
 
+import Alumno.Alumno;
+import Alumno.Materia;
+import java.util.HashSet;
+
 /**
  *
  * @author fabri
  */
 public class Pantalla extends javax.swing.JFrame {
+    
+   public static HashSet <Alumno> alumnosCompartidos = new HashSet<>();
+   public static HashSet <Materia> materiasCompartidas = new HashSet<>();
     
     /**
      * Creates new form Pantalla
@@ -153,7 +160,7 @@ public class Pantalla extends javax.swing.JFrame {
     private void jMenuItem1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem1ActionPerformed
         // TODO add your handling code here:
         
-        FormularioAlumnos formularioAlumnos = new FormularioAlumnos();
+        FormularioAlumnos formularioAlumnos = new FormularioAlumnos(Pantalla.alumnosCompartidos);
         
         jdpPantalla.add(formularioAlumnos);
         formularioAlumnos.setVisible(true);
@@ -179,7 +186,7 @@ public class Pantalla extends javax.swing.JFrame {
 
     private void jMenuItem2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem2ActionPerformed
         // TODO add your handling code here:
-        FormularioMateria formMateria = new FormularioMateria();
+        FormularioMateria formMateria = new FormularioMateria(Pantalla.materiasCompartidas);
         jdpPantalla.add(formMateria);
         formMateria.setVisible(true);
     }//GEN-LAST:event_jMenuItem2ActionPerformed
@@ -187,7 +194,7 @@ public class Pantalla extends javax.swing.JFrame {
     private void jMenuItem3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem3ActionPerformed
         // TODO add your handling code here:
         
-        FormularioInscripcion formInscripcion = new FormularioInscripcion();
+        FormularioInscripcion formInscripcion = new FormularioInscripcion(Pantalla.alumnosCompartidos);
         jdpPantalla.add(formInscripcion);
         formInscripcion.setVisible(true);
         
