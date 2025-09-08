@@ -36,7 +36,7 @@ public class FormularioAlumnos extends javax.swing.JInternalFrame {
         jLabel2 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
-        jButton1 = new javax.swing.JButton();
+        jbNuevo = new javax.swing.JButton();
         jbtnSalir = new javax.swing.JButton();
         jtfLegajo = new javax.swing.JTextField();
         jtfApellido = new javax.swing.JTextField();
@@ -56,10 +56,10 @@ public class FormularioAlumnos extends javax.swing.JInternalFrame {
         jLabel4.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         jLabel4.setText("Nombre:");
 
-        jButton1.setText("Nuevo");
-        jButton1.addActionListener(new java.awt.event.ActionListener() {
+        jbNuevo.setText("Nuevo");
+        jbNuevo.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton1ActionPerformed(evt);
+                jbNuevoActionPerformed(evt);
             }
         });
 
@@ -112,7 +112,7 @@ public class FormularioAlumnos extends javax.swing.JInternalFrame {
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                         .addComponent(btnGuardar)
                         .addGap(18, 18, 18)
-                        .addComponent(jButton1)
+                        .addComponent(jbNuevo)
                         .addGap(18, 18, 18)
                         .addComponent(jbtnSalir)
                         .addGap(14, 14, 14))))
@@ -135,7 +135,7 @@ public class FormularioAlumnos extends javax.swing.JInternalFrame {
                     .addComponent(jtfNombre, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 47, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jButton1)
+                    .addComponent(jbNuevo)
                     .addComponent(jbtnSalir)
                     .addComponent(btnGuardar))
                 .addContainerGap())
@@ -144,12 +144,13 @@ public class FormularioAlumnos extends javax.swing.JInternalFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+    private void jbNuevoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbNuevoActionPerformed
         // TODO add your handling code here:
         habilitarCampos();
+        jbNuevo.setEnabled(false);
         
         
-    }//GEN-LAST:event_jButton1ActionPerformed
+    }//GEN-LAST:event_jbNuevoActionPerformed
 
     private void btnGuardarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnGuardarActionPerformed
         // TODO add your handling code here:
@@ -157,9 +158,14 @@ public class FormularioAlumnos extends javax.swing.JInternalFrame {
         int legajo = Integer.parseInt( jtfLegajo.getText());
         String apellido = jtfApellido.getText();
         String nombre = jtfNombre.getText();
-        
-        alumnos.add(new Alumno(legajo,apellido,nombre));
+        Alumno alumno = new Alumno(legajo,apellido,nombre);
+        alumnos.add(alumno);
         inavilitarCampos();
+        
+        jtfLegajo.setText("");
+        jtfApellido.setText("");
+        jtfNombre.setText("");
+        jbNuevo.setEnabled(true);
     }//GEN-LAST:event_btnGuardarActionPerformed
 
     private void jbtnSalirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbtnSalirActionPerformed
@@ -194,11 +200,11 @@ public class FormularioAlumnos extends javax.swing.JInternalFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnGuardar;
-    private javax.swing.JButton jButton1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
+    private javax.swing.JButton jbNuevo;
     private javax.swing.JButton jbtnSalir;
     private javax.swing.JTextField jtfApellido;
     private javax.swing.JTextField jtfLegajo;
