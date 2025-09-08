@@ -7,6 +7,7 @@ package Gui;
 import Alumno.Alumno;
 import Alumno.Materia;
 import java.util.HashSet;
+import javax.swing.DefaultComboBoxModel;
 import javax.swing.table.DefaultTableModel;
 
 /**
@@ -14,16 +15,31 @@ import javax.swing.table.DefaultTableModel;
  * @author fabri
  */
 public class FormularioInscripcion extends javax.swing.JInternalFrame {
+
     private DefaultTableModel modelo;
-    private HashSet <Alumno> inscripcion;
-    private HashSet <Materia> materia;
+    private HashSet<Alumno> alumnos;
+    private HashSet<Materia> materia;
+
     /**
      * Creates new form FormularioAlumnos
      */
-    public FormularioInscripcion(HashSet<Alumno> alumn) {
+    public FormularioInscripcion(HashSet<Alumno> alumn, HashSet<Materia> mater) {
         initComponents();
         modelo = new DefaultTableModel();
-        this.inscripcion = alumn;
+        this.alumnos = alumn;
+        this.materia = mater;
+
+        DefaultComboBoxModel<String> comboBoxMaterias = new DefaultComboBoxModel<>();
+        for (Materia m : materia) {
+            comboBoxMaterias.addElement(m.getNombre());
+        }
+        jcbMateria.setModel(comboBoxMaterias);
+        
+        DefaultComboBoxModel<String> comboBoxAlumnos = new DefaultComboBoxModel<>();
+        for (Alumno a : alumnos) {
+            comboBoxAlumnos.addElement(a.getNombre());
+        }
+        jComboBox2.setModel(comboBoxAlumnos);
     }
 
     /**
@@ -51,7 +67,6 @@ public class FormularioInscripcion extends javax.swing.JInternalFrame {
         jLabel2.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         jLabel2.setText("Elija una materia:");
 
-        jcbMateria.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
         jcbMateria.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jcbMateriaActionPerformed(evt);

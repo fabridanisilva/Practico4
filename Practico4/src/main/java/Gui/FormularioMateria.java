@@ -13,7 +13,6 @@ import javax.swing.JOptionPane;
  * @author fabri
  */
 public class FormularioMateria extends javax.swing.JInternalFrame {
-    Materia materia;
     private HashSet <Materia> materias;
     /**
      * Creates new form FormularioMateria
@@ -166,7 +165,7 @@ public class FormularioMateria extends javax.swing.JInternalFrame {
         String nombreMateria = NombreMateria.getText();
         int año_materia = Integer.parseInt(AñoMateria.getText());
         
-        materia = new Materia(idMateria,nombreMateria,año_materia);
+        materias.add(new Materia(idMateria,nombreMateria,año_materia));
         inavilitarCampos();
         
     }//GEN-LAST:event_btnGuardarActionPerformed

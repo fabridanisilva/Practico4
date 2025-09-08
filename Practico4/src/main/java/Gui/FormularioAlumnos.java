@@ -13,15 +13,14 @@ import javax.swing.JOptionPane;
  * @author fabri
  */
 public class FormularioAlumnos extends javax.swing.JInternalFrame {
-    Alumno alumno;
-    private HashSet <Alumno> datos;
+    private HashSet <Alumno> alumnos;
     /**
      * Creates new form FormularioAlumnos
      */
     public FormularioAlumnos(HashSet <Alumno> alumn) {
         initComponents();
         inavilitarCampos();
-        this.datos = alumn;
+        this.alumnos = alumn;
     }
 
     /**
@@ -159,7 +158,7 @@ public class FormularioAlumnos extends javax.swing.JInternalFrame {
         String apellido = jtfApellido.getText();
         String nombre = jtfNombre.getText();
         
-        alumno = new Alumno(legajo,apellido,nombre);
+        alumnos.add(new Alumno(legajo,apellido,nombre));
         inavilitarCampos();
     }//GEN-LAST:event_btnGuardarActionPerformed
 
