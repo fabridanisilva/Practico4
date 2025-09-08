@@ -49,4 +49,11 @@ package Alumno;
         
         this.anio = anio;
     }
+
+    @Override
+    public String toString() {
+        return  " " + idMateria + ", " + nombre + ", " + anio + '}';
+    }
+    
+    
  }

@@ -154,7 +154,7 @@ public class FormularioMateria extends javax.swing.JInternalFrame {
         // TODO add your handling code here:
         
         habilitarCampos();
-        
+        jbNuevo.setEnabled(false);
         
     }//GEN-LAST:event_jbNuevoActionPerformed
 
@@ -165,9 +165,15 @@ public class FormularioMateria extends javax.swing.JInternalFrame {
         String nombreMateria = NombreMateria.getText();
         int año_materia = Integer.parseInt(AñoMateria.getText());
         
-        materias.add(new Materia(idMateria,nombreMateria,año_materia));
+        Materia materia = new Materia(idMateria,nombreMateria,año_materia);
+        
+        materias.add(materia);
         inavilitarCampos();
         
+        IdMateria.setText("");
+        NombreMateria.setText("");
+        AñoMateria.setText("");
+        jbNuevo.setEnabled(true);
     }//GEN-LAST:event_btnGuardarActionPerformed
 
     private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
