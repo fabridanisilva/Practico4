@@ -161,7 +161,8 @@ public class Pantalla extends javax.swing.JFrame {
         // TODO add your handling code here:
         
         FormularioAlumnos formularioAlumnos = new FormularioAlumnos(Pantalla.alumnosCompartidos);
-        
+        jdpPantalla.removeAll();
+        jdpPantalla.repaint();
         jdpPantalla.add(formularioAlumnos);
         formularioAlumnos.setVisible(true);
         
@@ -187,7 +188,10 @@ public class Pantalla extends javax.swing.JFrame {
     private void jMenuItem2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem2ActionPerformed
         // TODO add your handling code here:
         FormularioMateria formMateria = new FormularioMateria(Pantalla.materiasCompartidas);
+        jdpPantalla.removeAll();
+        jdpPantalla.repaint();
         jdpPantalla.add(formMateria);
+        
         formMateria.setVisible(true);
     }//GEN-LAST:event_jMenuItem2ActionPerformed
 
@@ -195,6 +199,8 @@ public class Pantalla extends javax.swing.JFrame {
         // TODO add your handling code here:
         
         FormularioInscripcion formInscripcion = new FormularioInscripcion(Pantalla.alumnosCompartidos, Pantalla.materiasCompartidas);
+        jdpPantalla.removeAll();
+        jdpPantalla.repaint();
         jdpPantalla.add(formInscripcion);
         formInscripcion.setVisible(true);
         
