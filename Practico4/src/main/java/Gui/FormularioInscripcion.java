@@ -31,15 +31,15 @@ public class FormularioInscripcion extends javax.swing.JInternalFrame {
         this.alumnos = alumn;
         this.materia = mater;
 
-        DefaultComboBoxModel<String> comboBoxMaterias = new DefaultComboBoxModel<>();
+        DefaultComboBoxModel<Materia> comboBoxMaterias = new DefaultComboBoxModel<>();
         for (Materia m : materia) {
-            comboBoxMaterias.addElement(m.nombre);
+            comboBoxMaterias.addElement(m);
         }
         jcbMateria.setModel(comboBoxMaterias);
         
-        DefaultComboBoxModel<String> comboBoxAlumnos = new DefaultComboBoxModel<>();
+        DefaultComboBoxModel<Alumno> comboBoxAlumnos = new DefaultComboBoxModel<>();
         for (Alumno a : alumnos) {
-            comboBoxAlumnos.addElement(a.getNombre());
+            comboBoxAlumnos.addElement(a);
         }
         jcbAlumno.setModel(comboBoxAlumnos);
     }
@@ -77,8 +77,6 @@ public class FormularioInscripcion extends javax.swing.JInternalFrame {
 
         jLabel3.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         jLabel3.setText("Elija un Alumno: ");
-
-        jcbAlumno.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
 
         jbInscripcion.setText("Inscribir");
         jbInscripcion.addActionListener(new java.awt.event.ActionListener() {
@@ -172,7 +170,7 @@ public class FormularioInscripcion extends javax.swing.JInternalFrame {
     private javax.swing.JLabel jLabel3;
     private javax.swing.JButton jbInscripcion;
     private javax.swing.JButton jbtnSalir;
-    private javax.swing.JComboBox<String> jcbAlumno;
-    private javax.swing.JComboBox<String> jcbMateria;
+    private javax.swing.JComboBox<Alumno> jcbAlumno;
+    private javax.swing.JComboBox<Materia> jcbMateria;
     // End of variables declaration//GEN-END:variables
 }
