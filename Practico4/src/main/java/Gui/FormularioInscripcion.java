@@ -24,6 +24,7 @@ public class FormularioInscripcion extends javax.swing.JInternalFrame {
     /**
      * Creates new form FormularioAlumnos
      */
+    //para dejar algo escrito nada mas
     public FormularioInscripcion(HashSet<Alumno> alumn, HashSet<Materia> mater) {
         initComponents();
         modelo = new DefaultTableModel();
